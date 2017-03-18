@@ -17,12 +17,13 @@
   var path = window.location.pathname;
   var pullRequestRegex = /\/[\w-]+\/SmokeDetector\/pull\/\d+/i;
   var editRegex = /\/[\w-]+\/SmokeDetector\/edit\/[\w-\/\.]+/i;
+  var checkbox = '<input type="checkbox" name="autopull" id="autopull"><label for="autopull">autopull</label>';
+
   if (path.match(pullRequestRegex)) {
     console.log("PR");
-    var checkbox = '<input type="checkbox" name="autopull" id="autopull"><label for="autopull">autopull</label>';
-    $(".commit-form h3").after(checkbox);
+    $(".commit-form").prepend(checkbox);
   } else if (path.match(editRegex)) {
     console.log("edit");
-    // Edit on GH web
+    $(".commit-form h3").after(checkbox);
   }
 })();
