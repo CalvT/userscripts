@@ -14,13 +14,14 @@
 
 (function () {
   "use strict";
-  path = window.location.pathname
-  pullRequestRegex = /\/\w+\/SmokeDetector\/pull\/\d+`/i
-  editRegex = /\/\w+\/SmokeDetector\/edit\/.*/i
+  var path = window.location.pathname;
+  var pullRequestRegex = /\/[\w-]+\/SmokeDetector\/pull\/\d+/i;
+  var editRegex = /\/[\w-]+\/SmokeDetector\/edit\/[\w-\/\.]+/i;
   if (path.match(pullRequestRegex)) {
-    // PR merge page
+    console.log("PR");
+    // $(".commit-form h3").after("");
   } else if (path.match(editRegex)) {
+    console.log("edit");
     // Edit on GH web
   }
-
 })();
