@@ -17,8 +17,9 @@
   "use strict";
   var path = window.location.pathname;
   var pullRequestRegex = /\/[\w-]+\/SmokeDetector\/pull\/\d+/i;
-  var editRegex = /\/[\w-]+\/SmokeDetector\/edit\/[\w-\/\.]+/i;
-  var checkbox = '<input type="checkbox" name="autopull" id="autopull"><label for="autopull">autopull</label>';
+  var editRegex = /\/[\w-]+\/SmokeDetector\/edit\/[\w-/.]+/i;
+  var checkbox = `<input type="checkbox" name="autopull" id="autopull" class="autopull">
+                  <label for="autopull" class="autopull">autopull</label>`;
 
   if (path.match(pullRequestRegex)) {
     console.log("PR");
@@ -27,4 +28,8 @@
     console.log("edit");
     $(".commit-form h3").after(checkbox);
   }
+
+  $(".autopull").click(function () {
+    $(".commit-form textarea.js-new-blob-commit-description").append(" --autopull");
+  });
 })();
