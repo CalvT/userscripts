@@ -19,7 +19,8 @@
   var editRegex = /\/[\w-]+\/SmokeDetector\/edit\/[\w-\/\.]+/i;
   if (path.match(pullRequestRegex)) {
     console.log("PR");
-    // $(".commit-form h3").after("");
+    var checkbox = '<input type="checkbox" name="autopull" id="autopull"><label for="autopull">autopull</label>';
+    $(".commit-form h3").after(checkbox);
   } else if (path.match(editRegex)) {
     console.log("edit");
     // Edit on GH web
