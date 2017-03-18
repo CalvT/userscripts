@@ -9,6 +9,7 @@
 // @updateURL   https://raw.githubusercontent.com/Charcoal-SE/Userscripts/master/autopull/autopull.user.js
 // @downloadURL https://raw.githubusercontent.com/Charcoal-SE/Userscripts/master/autopull/autopull.user.js
 // @supportURL  https://github.com/Charcoal-SE/Userscripts/issues
+// @require     http://code.jquery.com/jquery-3.2.0.min.js
 // @grant       none
 // ==/UserScript==
 
